@@ -136,6 +136,35 @@ namespace ICSharpCode.Decompiler.DebugInfo
 			HandleMethod(anonymousMethodExpression);
 		}
 
+		public override void VisitLocalFunctionDeclarationStatement(LocalFunctionDeclarationStatement localFunctionDeclarationStatement)
+		{
+			HandleMethod(localFunctionDeclarationStatement);
+		}
+
+		public override void VisitPropertyDeclaration(PropertyDeclaration propertyDeclaration)
+		{
+			if (propertyDeclaration.ExpressionBody != null)
+			{
+				HandleMethod(propertyDeclaration.ExpressionBody, propertyDeclaration.Annotation<ILFunction>());
+			}
+			else
+			{
+				base.VisitPropertyDeclaration(propertyDeclaration);
+			}
+		}
+
+		public override void VisitIndexerDeclaration(IndexerDeclaration indexerDeclaration)
+		{
+			if (indexerDeclaration.ExpressionBody != null)
+			{
+				HandleMethod(indexerDeclaration.ExpressionBody, indexerDeclaration.Annotation<ILFunction>());
+			}
+			else
+			{
+				base.VisitIndexerDeclaration(indexerDeclaration);
+			}
+		}
+
 		public override void VisitQueryFromClause(QueryFromClause queryFromClause)
 		{
 			if (queryFromClause.Parent.FirstChild != queryFromClause)
