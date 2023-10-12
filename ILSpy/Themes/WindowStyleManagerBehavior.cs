@@ -109,7 +109,7 @@ namespace ICSharpCode.ILSpy.Themes
 
 				var isDarkTheme = background < foreground;
 
-				NativeMethods.UseImmersiveDarkMode(hwnd, isDarkTheme);
+				//NativeMethods.UseImmersiveDarkMode(hwnd, isDarkTheme);
 			}
 			else
 			{

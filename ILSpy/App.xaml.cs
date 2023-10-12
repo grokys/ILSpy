@@ -67,7 +67,7 @@ namespace ICSharpCode.ILSpy
 				&& !MiscSettingsPanel.CurrentMiscSettings.AllowMultipleInstances;
 			if (forceSingleInstance)
 			{
-				SingleInstanceHandling.ForceSingleInstance(cmdArgs);
+				//SingleInstanceHandling.ForceSingleInstance(cmdArgs);
 			}
 
 			InitializeComponent();
@@ -85,7 +85,7 @@ namespace ICSharpCode.ILSpy
 			EventManager.RegisterClassHandler(typeof(Window),
 											  Hyperlink.RequestNavigateEvent,
 											  new RequestNavigateEventHandler(Window_RequestNavigate));
-			ILSpyTraceListener.Install();
+			//ILSpyTraceListener.Install();
 		}
 
 		static Assembly ResolvePluginDependencies(AssemblyLoadContext context, AssemblyName assemblyName)

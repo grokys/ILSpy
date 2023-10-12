@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Xpf.Sdk/9999.0.0-localbuild">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,7 +8,6 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <GenerateSupportedRuntime>false</GenerateSupportedRuntime>
-    <UseWpf>true</UseWpf>
     <RootNamespace>ICSharpCode.ILSpy</RootNamespace>
 
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -119,7 +118,7 @@
     <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
       <SortResX>powershell -NoProfile -ExecutionPolicy Bypass -File BuildTools/sort-resx.ps1</SortResX>
     </PropertyGroup>
-    <Exec WorkingDirectory=".." Command="$(SortResX)" Timeout="60000" />
+<!--    <Exec WorkingDirectory=".." Command="$(SortResX)" Timeout="60000" />-->
     <Touch Files="@(SortResXStamp)" AlwaysCreate="true" />
   </Target>
 
